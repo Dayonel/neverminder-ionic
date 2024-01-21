@@ -5,8 +5,13 @@ const config: CapacitorConfig = {
   appName: 'Neverminder',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
-  }
+    androidScheme: 'https',
+  },
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 3000,
+    },
+  },
 };
 
 export default config;

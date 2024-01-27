@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1024"
+   height="1024"
+   version="1.1"
+   viewBox="0 0 270.92847 270.94244"
+   id="svg11"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/Users/alba/Dayo/git/neverminder-app/ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     id="namedview13"
+     pagecolor="#201b1b"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="false"
+     showgrid="false"
+     inkscape:zoom="0.41699219"
+     inkscape:cx="576.74941"
+     inkscape:cy="362.1171"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg11" />
+  <path
+     d="m 112.23852,78.243856 h 15.5977 m -8.1541,31.171794 h 56.60047 M 112.2383,78.243856 c -6.96072,-0.589617 -12.31646,5.639126 -12.817176,12.18844 -0.790403,10.344444 8.477966,18.266484 18.230086,18.936674 0.67547,0.0504 1.35352,0.0619 2.03054,0.0504 M 65.593526,48.328953 V 222.61446 l 53.170074,-51.48102 56.26925,51.48102 V 109.44064 c 16.73336,0.004 30.30015,-13.561557 30.30208,-30.294347 -6.9e-4,-16.733367 -13.56794,-30.298226 -30.30208,-30.294348 l -74.8875,-0.26138 z"
+     fill="#ff00ff"
+     stroke="#000000"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-miterlimit="8"
+     stroke-width="15.3752"
+     style="paint-order:markers fill stroke"
+     id="path9"
+     inkscape:export-filename="/Users/alba/Dayo/git/neverminder-app/ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+</svg>

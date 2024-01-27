@@ -7,11 +7,6 @@ const config: CapacitorConfig = {
   server: {
     androidScheme: 'https',
   },
-  plugins: {
-    SplashScreen: {
-      launchShowDuration: 300,
-    },
-  },
 };
 
 export default config;

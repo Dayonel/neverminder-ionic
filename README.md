@@ -1,5 +1,13 @@
 # neverminder-app
 
+#### Run
+
+```bash
+ionic build
+npx cap sync
+npx cap run ios
+```
+
 #### Generate icon
 
 ```bash

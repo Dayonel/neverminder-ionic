@@ -1,22 +1,101 @@
-# neverminder-app
+# Neverminder APP
 
-#### Run
+Neverminder is an app that sends notifications for your plans.
 
-```bash
-ionic build
-npx cap sync
-npx cap run ios
+## Installation
+
+Install [Node](https://nodejs.org/en/download)
+
+Install `ionic cli`
+```
+npm install -g @ionic/cli
 ```
 
-#### Generate icon
+Install capacitor android
+```
+npm install @capacitor/android
+```
 
-```bash
+Install capacitor ios
+```
+npm install @capacitor/ios
+```
+
+## Firebase
+Create a project in [Firebase](https://firebase.com/)
+
+Create Android & iOS apps
+	
+Download files `google-services.json` and `GoogleService-Info.plist`.
+
+## Setup
+Add file `google-services.json` to `android/app/` folder.\
+Add file `GoogleService-Info.plist` to `xcode/App/App` ensuring to add it to all targets.
+
+## Build
+```
+ionic build
+```
+
+```
+npx cap sync
+```
+
+```
+npx cap copy
+```
+
+## Run
+
+```
+npx cap open android
+```
+
+```
+npx cap open ios
+```
+
+Finally run in `Android Studio` / `Xcode`
+
+## Debug
+
+Open `Android Studio`
+
+Debug `app`
+
+In `Vscode` go to `Run and Debug` shortcut `Ctrl + Shift + D`
+
+Select `Attach to Android WebView` and choose your phone.
+
+[Youtube](https://www.youtube.com/watch?v=akh6V6Yw1lw&t=1003s) video.
+
+## Native Debug
+
+For native, go to `Android studio` 
+
+Navigate `capacitor-push-notifications` > `java` > `com.capacitorjs.plugins.pushnotifications` > `MessagingService` 
+
+Add a breakpoint on `public void register(PluginCall call)` line `109`
+
+In `Threads & Variables` panel below, inspect `task` variable value `zze` is the token.
+
+## Adb
+
+Make sure that `Android SDK Platform-Tools` is installed
+> Tools > SDK Manager > Android SDK > SDK Tools (Tab)
+
+Copy `adb.exe` path
+> C:\Users\dayon\AppData\Local\Android\Sdk\platform-tools
+
+Open `Environment Variables`, edit `Path`, add `adb.exe` path.
+
+Finally restart cmd console & test it `adb`
+
+## Generate icon
+
+```
 npx @capacitor/assets generate --iconBackgroundColor "#201b1b" --iconBackgroundColorDark "#201b1b" --splashBackgroundColorDark "#201b1b" --logoSplashScale 0.4
 ```
 
-> Then adjust in xcode
-> App/App/Assets/Splash
-> Light and Dark choices
-
-> App/App/Assets/LaunchScreen
-> Background -> System Background
+Then adjust in `xcode/App/App/Assets/Splash` Light and Dark choices\
+Then adjust in `xcode/App/App/Assets/LaunchScreen` Background -> System Background

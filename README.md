@@ -99,3 +99,23 @@ npx @capacitor/assets generate --iconBackgroundColor "#201b1b" --iconBackgroundC
 
 Then adjust in `xcode/App/App/Assets/Splash` Light and Dark choices\
 Then adjust in `xcode/App/App/Assets/LaunchScreen` Background -> System Background
+
+## Add page
+
+To add a page run
+
+```
+ionic g page pages/reminders
+```
+
+```
+ionic g page pages/reminderDetails
+```
+
+## Add service
+
+To add a service run
+
+```
+ionic g service services/platform
+```

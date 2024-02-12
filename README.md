@@ -47,12 +47,28 @@ npx cap copy
 
 ## Run
 
+Android
+
 ```
 npx cap open android
 ```
 
+*Android localhost*
+
+```
+npx cap run android --livereload --external
+```
+
+iOS
+
 ```
 npx cap open ios
+```
+
+*iOS localhost*
+
+```
+npx cap run ios --livereload --external
 ```
 
 Finally run in `Android Studio` / `Xcode`
@@ -90,6 +106,11 @@ Copy `adb.exe` path
 Open `Environment Variables`, edit `Path`, add `adb.exe` path.
 
 Finally restart cmd console & test it `adb`
+
+## java.io.IOException: SERVICE_NOT_AVAILABLE
+
+Enable wifi in your phone.
+Go to `Settings` > `Date & time` enable `Set time automatically`
 
 ## Generate icon
 

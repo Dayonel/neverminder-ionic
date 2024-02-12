@@ -5,6 +5,7 @@ const config: CapacitorConfig = {
   appName: 'Neverminder',
   webDir: 'www',
   server: {
+    //url: '192.168.178.129', // TODO: Remove this in prod
     androidScheme: 'https',
   },
 };

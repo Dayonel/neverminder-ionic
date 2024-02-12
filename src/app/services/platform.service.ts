@@ -1,9 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PlatformService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  createPlatform(pushToken: string): Observable<any> {
+    return this.http.post(`${environment.baseUrl}/platforms`, {}, {
+      headers: {
+        'x-push-token': pushToken
+      }
+    });
+  }
 }

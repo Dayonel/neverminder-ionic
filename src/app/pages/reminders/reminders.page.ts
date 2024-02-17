@@ -51,6 +51,7 @@ export class RemindersPage implements OnInit {
     });
 
     PushNotifications.addListener('registration', (token: Token) => {
+      // TODO: Add a loader here
       this.platformService.createPlatform(token.value).subscribe({
         next: () => alert('Push registration success, token: ' + token.value),
         error: () => alert('Something went wrong.'),

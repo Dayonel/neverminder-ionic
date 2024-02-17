@@ -140,3 +140,14 @@ To add a service run
 ```
 ionic g service services/platform
 ```
+
+## Add Tailwind CSS
+Install Angular CLI (elevated permissions)
+```
+npm install -g @angular/cli
+```
+
+Install tailwind
+```
+ng add ngx-tailwind
+```

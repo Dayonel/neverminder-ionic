@@ -6,6 +6,7 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
+  IonIcon
 } from '@ionic/angular/standalone';
 import {
   ActionPerformed,
@@ -28,6 +29,7 @@ import { Capacitor } from '@capacitor/core';
     IonToolbar,
     CommonModule,
     FormsModule,
+    IonIcon
   ],
 })
 export class RemindersPage implements OnInit {

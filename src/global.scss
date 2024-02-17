@@ -33,3 +33,6 @@
     @apply flex justify-center items-center w-full h-full;
 }
 
+.no-ripple {
+    --ripple-color: transparent;
+}

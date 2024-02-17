@@ -6,7 +6,15 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonIcon
+  IonIcon,
+  IonRefresher,
+  IonRefresherContent,
+  IonList,
+  IonListHeader,
+  IonLabel,
+  IonItem,
+  IonSegment,
+  IonSegmentButton
 } from '@ionic/angular/standalone';
 import {
   ActionPerformed,
@@ -29,11 +37,19 @@ import { Capacitor } from '@capacitor/core';
     IonToolbar,
     CommonModule,
     FormsModule,
-    IonIcon
+    IonIcon,
+    IonRefresher,
+    IonRefresherContent,
+    IonList,
+    IonListHeader,
+    IonLabel,
+    IonItem,
+    IonSegment,
+    IonSegmentButton
   ],
 })
 export class RemindersPage implements OnInit {
-  constructor(private platformService: PlatformService) {}
+  constructor(private platformService: PlatformService) { }
 
   ngOnInit() {
     const isPushNotificationsAvailable =
@@ -77,5 +93,12 @@ export class RemindersPage implements OnInit {
         alert('Push action performed: ' + JSON.stringify(notification));
       }
     );
+  }
+
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
   }
 }

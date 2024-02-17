@@ -1,3 +1,11 @@
-p {
-    color: #8c8c8c;
+.header {
+    @apply flex justify-center items-center p-4;
+}
+
+.segment-button {
+    text-transform: none;
+}
+
+.toolbar-segment {
+    --opacity: 0;
 }

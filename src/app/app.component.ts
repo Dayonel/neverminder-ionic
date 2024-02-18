@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
-import { StatusBar, Style } from '@capacitor/status-bar';
-import { Capacitor } from '@capacitor/core';
+import { PushNotificationsService } from './services/push-notifications.service';
+import { StatusBarServiceService } from './services/status-bar-service.service';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +9,12 @@ import { Capacitor } from '@capacitor/core';
   standalone: true,
   imports: [IonApp, IonRouterOutlet],
 })
-export class AppComponent {
-  constructor() {
-    if (!Capacitor.isPluginAvailable('StatusBar')) return;
+export class AppComponent implements OnInit {
+  constructor(private pushNotifications: PushNotificationsService,
+    private statusBar: StatusBarServiceService) { }
 
-    StatusBar.setOverlaysWebView({ overlay: true });
-    if (this.isDarkMode()) {
-      StatusBar.setStyle({ style: Style.Dark });
-    }
-    else {
-      StatusBar.setStyle({ style: Style.Light });
-    }
-  }
-
-  isDarkMode(): boolean {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    return prefersDark.matches;
+  ngOnInit(): void {
+    this.pushNotifications.initialize();
+    this.statusBar.initialize();
   }
 }

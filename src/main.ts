@@ -17,7 +17,8 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular({
       rippleEffect: false,
-      mode: 'ios'
+      mode: 'ios',
+      _forceStatusbarPadding: true,
     }),
     provideRouter(routes),
     importProvidersFrom(HttpClientModule)

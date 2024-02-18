@@ -1,15 +1,16 @@
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
+<ion-tabs class="tabs-footer" (ionTabsDidChange)="tabChanged($event)">
+  <ion-tab-bar class="tabs" slot="bottom">
     <ion-tab-button tab="reminders" href="/reminders">
-      <ion-icon aria-hidden="true" name="bookmark-outline"></ion-icon>
+      <ion-icon aria-hidden="true" [name]="selectedTab == 'reminders' ? 'bookmark' : 'bookmark-outline'"></ion-icon>
     </ion-tab-button>
 
     <ion-tab-button tab="add" href="/add">
-      <ion-icon aria-hidden="true" name="add-circle-outline"></ion-icon>
+      <ion-icon aria-hidden="true" [name]="selectedTab == 'add' ? 'add-circle' : 'add-circle-outline'"></ion-icon>
     </ion-tab-button>
 
     <ion-tab-button tab="account" href="/account">
-      <ion-icon aria-hidden="true" name="person-circle-outline"></ion-icon>
+      <ion-icon aria-hidden="true"
+        [name]="selectedTab == 'account' ? 'person-circle' : 'person-circle-outline'"></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

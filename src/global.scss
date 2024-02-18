@@ -32,3 +32,7 @@
 .center {
     @apply flex justify-center items-center w-full h-full;
 }
+
+ion-icon {
+    color: var(--ion-color-dark);
+}

@@ -1,5 +1,5 @@
 .header {
-    @apply flex justify-center items-center p-4;
+    @apply flex justify-center items-center p-4 pt-12;
 }
 
 .segment-button {
@@ -8,4 +8,16 @@
 
 .toolbar-segment {
     --opacity: 0;
+}
+
+.header-ios {
+    border-bottom: 1px solid var(--ion-color-light);
+}
+
+.segment-button-checked {
+    color: var(--ion-color-dark);
+}
+
+ion-refresher.refresher-active {
+    z-index: 1;
 }

@@ -52,8 +52,7 @@ export class RemindersPage implements OnInit {
   constructor(private platformService: PlatformService) { }
 
   ngOnInit() {
-    const isPushNotificationsAvailable =
-      Capacitor.isPluginAvailable('PushNotifications');
+    const isPushNotificationsAvailable = Capacitor.isPluginAvailable('PushNotifications');
     if (!isPushNotificationsAvailable) return;
 
     // Request permission to use push notifications

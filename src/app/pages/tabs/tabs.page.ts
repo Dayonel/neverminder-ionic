@@ -1,7 +1,7 @@
 import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { bookmarkOutline, addCircleOutline, personCircleOutline } from 'ionicons/icons';
+import { bookmarkOutline, bookmark, addCircleOutline, addCircle, personCircleOutline, personCircle } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
@@ -11,9 +11,14 @@ import { bookmarkOutline, addCircleOutline, personCircleOutline } from 'ionicons
   imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
 })
 export class TabsPage {
+  selectedTab: string = "";
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {
-    addIcons({ bookmarkOutline, addCircleOutline, personCircleOutline });
+    addIcons({ bookmarkOutline, bookmark, addCircleOutline, addCircle, personCircleOutline, personCircle });
+  }
+
+  tabChanged(event: any) {
+    this.selectedTab = event.tab;
   }
 }

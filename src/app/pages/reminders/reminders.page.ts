@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -19,9 +19,9 @@ import {
   IonNavLink,
   IonButton
 } from '@ionic/angular/standalone';
-
 import { UpcomingRemindersComponent } from 'src/app/components/upcoming-reminders/upcoming-reminders.component';
 import { PastRemindersComponent } from 'src/app/components/past-reminders/past-reminders.component';
+import { SwiperContainer } from 'swiper/element';
 
 @Component({
   selector: 'app-reminders',
@@ -50,9 +50,19 @@ import { PastRemindersComponent } from 'src/app/components/past-reminders/past-r
     UpcomingRemindersComponent,
     PastRemindersComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RemindersPage {
+  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
   selectedSegment = "upcoming";
+
+  slideTo(index: number) {
+    this.swiper.nativeElement.swiper.slideTo(index);
+  }
+
+  slideChange() {
+    this.selectedSegment = this.swiper.nativeElement.swiper.activeIndex == 0 ? "upcoming" : "past";
+  }
 
   handleRefresh(event: any) {
     setTimeout(() => {

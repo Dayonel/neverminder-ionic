@@ -4,10 +4,10 @@
   </div>
   <ion-toolbar>
     <ion-segment class="segment" mode="md" value="upcoming" [(ngModel)]="selectedSegment">
-      <ion-segment-button class="segment-button" value="upcoming">
+      <ion-segment-button class="segment-button" value="upcoming" (click)="slideTo(0)">
         <ion-label>Upcoming</ion-label>
       </ion-segment-button>
-      <ion-segment-button class="segment-button" value="past">
+      <ion-segment-button class="segment-button" value="past" (click)="slideTo(1)">
         <ion-label>Past</ion-label>
       </ion-segment-button>
     </ion-segment>
@@ -19,6 +19,12 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <upcoming-reminders *ngIf="selectedSegment == 'upcoming'"></upcoming-reminders>
-  <past-reminders *ngIf="selectedSegment == 'past'"></past-reminders>
+  <swiper-container #swiper (swiperslidechange)="slideChange()">
+    <swiper-slide>
+      <upcoming-reminders></upcoming-reminders>
+    </swiper-slide>
+    <swiper-slide>
+      <past-reminders></past-reminders>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>

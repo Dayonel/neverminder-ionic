@@ -133,6 +133,14 @@ ionic g page pages/reminders
 ionic g page pages/reminderDetails
 ```
 
+## Add a component
+
+To add a component run
+
+```
+ionic g component components/upcomingReminders
+```
+
 ## Add service
 
 To add a service run

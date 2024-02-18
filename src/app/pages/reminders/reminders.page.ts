@@ -14,8 +14,14 @@ import {
   IonLabel,
   IonItem,
   IonSegment,
-  IonSegmentButton
+  IonSegmentButton,
+  IonNav,
+  IonNavLink,
+  IonButton
 } from '@ionic/angular/standalone';
+
+import { UpcomingRemindersComponent } from 'src/app/components/upcoming-reminders/upcoming-reminders.component';
+import { PastRemindersComponent } from 'src/app/components/past-reminders/past-reminders.component';
 
 @Component({
   selector: 'app-reminders',
@@ -37,10 +43,16 @@ import {
     IonLabel,
     IonItem,
     IonSegment,
-    IonSegmentButton
+    IonSegmentButton,
+    IonNav,
+    IonNavLink,
+    IonButton,
+    UpcomingRemindersComponent,
+    PastRemindersComponent
   ],
 })
 export class RemindersPage {
+  selectedSegment = "upcoming";
 
   handleRefresh(event: any) {
     setTimeout(() => {

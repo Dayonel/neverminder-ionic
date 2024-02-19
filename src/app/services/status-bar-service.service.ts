@@ -8,10 +8,25 @@ import { StatusBar, Style } from '@capacitor/status-bar';
 export class StatusBarServiceService {
 
   async initialize(): Promise<void> {
-    if (Capacitor.isNativePlatform()) {
+    if (Capacitor.isNativePlatform() && Capacitor.getPlatform() == "android") {
+      await this.statusBarColor();
 
-      await StatusBar.setOverlaysWebView({ overlay: true });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', async () => {
+        await this.statusBarColor();
+      });
+    }
+  }
+
+  isDarkMode = (): boolean => window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  async statusBarColor() {
+    if (this.isDarkMode()) {
+      await StatusBar.setStyle({ style: Style.Dark });
+      await StatusBar.setBackgroundColor({ color: '#000000' });
+    }
+    else {
       await StatusBar.setStyle({ style: Style.Light });
+      await StatusBar.setBackgroundColor({ color: '#FFFFFF' });
     }
   }
 }

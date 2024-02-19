@@ -12,6 +12,10 @@ export const routes: Routes = [
                     import('../reminders/reminders.page').then((m) => m.RemindersPage),
             },
             {
+                path: 'reminders/:id',
+                loadComponent: () => import('../reminder-details/reminder-details.page').then(m => m.ReminderDetailsPage)
+            },
+            {
                 path: 'add',
                 loadComponent: () =>
                     import('../add-reminder/add-reminder.page').then((m) => m.AddReminderPage),
@@ -26,10 +30,6 @@ export const routes: Routes = [
                 redirectTo: '/reminders',
                 pathMatch: 'full',
             },
-            // {
-            //     path: ':id',
-            //     loadComponent: () => import('../reminder-details/reminder-details.page').then(m => m.ReminderDetailsPage)
-            // },
         ],
     },
     {

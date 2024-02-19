@@ -1,13 +1,48 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>reminderDetails</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details page</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-text color="primary">Save</ion-text>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">reminderDetails</ion-title>
+      <ion-title size="large">
+        <ion-input placeholder="Title..." aria-label="Title" value="Details page"></ion-input>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list-header>Date</ion-list-header>
+  <ion-list [inset]="true">
+    <ion-item [button]="true" color="light">
+      <ion-label>Date</ion-label>
+      <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-list-header>Date</ion-list-header>
+  <div class="flex justify-center">
+    <ion-datetime presentation="date-time" [preferWheel]="true" hourCycle="h24"></ion-datetime>
+  </div> -->
+
+  <ion-list-header>Description</ion-list-header>
+  <ion-textarea class="px-4" aria-label="Description" counter="true" maxlength="1024" auto-grow="true"
+    [counterFormatter]="customCounterFormatter" placeholder="Description..."
+    value="Here's a small text description for the content. Nothing more, nothing less."></ion-textarea>
+
 </ion-content>
+
+<ion-footer class="p-4">
+  <ion-button color="light" expand="block">
+    <ion-text color="danger">Delete reminder</ion-text>
+  </ion-button>
+</ion-footer>

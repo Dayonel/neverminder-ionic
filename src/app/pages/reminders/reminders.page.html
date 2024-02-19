@@ -14,12 +14,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <swiper-container #swiper (swiperslidechange)="slideChange()">
+  <swiper-container class="swiper" #swiper (swiperslidechange)="slideChange()">
     <swiper-slide>
       <upcoming-reminders></upcoming-reminders>
     </swiper-slide>

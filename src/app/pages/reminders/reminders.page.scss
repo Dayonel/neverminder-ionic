@@ -18,6 +18,10 @@
     color: var(--ion-color-dark);
 }
 
+.swiper {
+    height: 100%;
+}
+
 ion-refresher.refresher-active {
     z-index: 1;
 }

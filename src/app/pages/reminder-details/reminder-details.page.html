@@ -13,6 +13,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- <ion-breadcrumbs>
+    <ion-breadcrumb href="reminders">Reminders</ion-breadcrumb>
+    <ion-breadcrumb href="reminders/1">Details page</ion-breadcrumb>
+  </ion-breadcrumbs> -->
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
@@ -21,28 +26,39 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list-header>Date</ion-list-header>
-  <ion-list [inset]="true">
-    <ion-item [button]="true" color="light">
-      <ion-label>Date</ion-label>
-      <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
-    </ion-item>
+  <ion-note class="px-4" color="medium">{{ datetime }}</ion-note>
+
+  <ion-list>
+    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime #datetime id="datetime" hourCycle="h23" (ionChange)="dateChanged(datetime.value)"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list-header>Description</ion-list-header>
+    <ion-textarea aria-label="Description" counter="true" maxlength="1024" auto-grow="true"
+      [counterFormatter]="customCounterFormatter" placeholder="Description..."
+      value="Here's a small text description for the content. Nothing more, nothing less."></ion-textarea>
   </ion-list>
-
-  <!-- <ion-list-header>Date</ion-list-header>
-  <div class="flex justify-center">
-    <ion-datetime presentation="date-time" [preferWheel]="true" hourCycle="h24"></ion-datetime>
-  </div> -->
-
-  <ion-list-header>Description</ion-list-header>
-  <ion-textarea class="px-4" aria-label="Description" counter="true" maxlength="1024" auto-grow="true"
-    [counterFormatter]="customCounterFormatter" placeholder="Description..."
-    value="Here's a small text description for the content. Nothing more, nothing less."></ion-textarea>
-
 </ion-content>
 
 <ion-footer class="p-4">
-  <ion-button color="light" expand="block">
+  <ion-button color="light" expand="block" (click)="actionSheetOpen = true">
     <ion-text color="danger">Delete reminder</ion-text>
   </ion-button>
 </ion-footer>
+
+<ion-action-sheet [isOpen]="actionSheetOpen" header="Are you sure you want to delete this reminder?" [buttons]="actionSheetButtons"></ion-action-sheet>

@@ -13,11 +13,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- <ion-breadcrumbs>
-    <ion-breadcrumb href="reminders">Reminders</ion-breadcrumb>
-    <ion-breadcrumb href="reminders/1">Details page</ion-breadcrumb>
-  </ion-breadcrumbs> -->
-
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
@@ -26,33 +21,62 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-note class="px-4" color="medium">{{ datetime }}</ion-note>
+  <!-- Date & Time -->
+  <ion-list-header>Date & Time</ion-list-header>
+  <ion-list [inset]="true">
+    <ion-accordion-group>
 
-  <ion-list>
-    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <!-- Accordion 1 -->
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <div class="flex items-center gap-4 text-ellipsis">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-label>{{ formattedDate }}</ion-label>
+          </div>
+        </ion-item>
 
-    <ion-modal [keepContentsMounted]="true">
-      <ng-template>
-        <ion-datetime #datetime id="datetime" hourCycle="h23" (ionChange)="dateChanged(datetime.value)"></ion-datetime>
-      </ng-template>
-    </ion-modal>
+        <ion-datetime slot="content" #date id="date" (ionChange)="dateChanged(date.value)"
+          presentation="date"></ion-datetime>
+      </ion-accordion>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Card Title</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
+      <!-- Accordion 2 -->
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <div class="flex items-center gap-4">
+            <ion-icon name="alarm-outline"></ion-icon>
+            <ion-label>{{ formattedTime }}</ion-label>
+          </div>
+        </ion-item>
+        <ion-datetime slot="content" #time id="time" (ionChange)="timeChanged(time.value)" presentation="time"
+          hourCycle="h23"></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
 
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-list-header>Description</ion-list-header>
-    <ion-textarea aria-label="Description" counter="true" maxlength="1024" auto-grow="true"
-      [counterFormatter]="customCounterFormatter" placeholder="Description..."
-      value="Here's a small text description for the content. Nothing more, nothing less."></ion-textarea>
+    <!-- Enabled -->
+    <ion-item color="light">
+      <ion-toggle [(ngModel)]="enabled">
+        <ion-label>Enabled</ion-label>
+        <ion-note color="medium">{{ enabled ? 'Notification will be sent' : 'No notification will be sent' }}</ion-note>
+      </ion-toggle>
+    </ion-item>
   </ion-list>
+  <!-- <ion-accordion value="third">
+    <ion-item slot="header" color="light">
+      <div class="flex items-center gap-4">
+        <ion-icon name="alarm-outline"></ion-icon>
+        <ion-label>{{ formattedTime }}</ion-label>
+      </div>
+    </ion-item>
+    <ion-toggle slot="content" class="w-full" [checked]="true">Enabled</ion-toggle>
+  </ion-accordion> -->
+  <!-- Description -->
+  <ion-list-header>Description</ion-list-header>
+  <ion-card class="m-4 shadow-none" color="light">
+    <ion-card-content class="pt-2">
+      <ion-textarea aria-label="Description" maxlength="1024" auto-grow="true" placeholder="Description..." value=""
+        rows="5"></ion-textarea>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer class="p-4">
@@ -61,4 +85,5 @@
   </ion-button>
 </ion-footer>
 
-<ion-action-sheet [isOpen]="actionSheetOpen" header="Are you sure you want to delete this reminder?" [buttons]="actionSheetButtons"></ion-action-sheet>
+<ion-action-sheet [isOpen]="actionSheetOpen" header="Are you sure you want to delete this reminder?"
+  [buttons]="actionSheetButtons"></ion-action-sheet>

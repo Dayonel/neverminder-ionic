@@ -1,8 +1,8 @@
 ion-refresher.refresher-active {
-    z-index: 1;
+  z-index: 1;
 }
 
 ::ng-deep reminder-item:last-child ion-item {
-    --border-width: 0 !important;
-    --inner-border-width: 0 !important;
+  --border-width: 0 !important;
+  --inner-border-width: 0 !important;
 }

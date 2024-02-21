@@ -53,23 +53,14 @@
     </ion-accordion-group>
 
     <!-- Enabled -->
-    <ion-item color="light">
+    <ion-item lines="none" color="light">
       <ion-toggle [(ngModel)]="enabled">
         <ion-label>Enabled</ion-label>
         <ion-note color="medium">{{ enabled ? 'Notification will be sent' : 'No notification will be sent' }}</ion-note>
       </ion-toggle>
     </ion-item>
   </ion-list>
-  <!-- <ion-accordion value="third">
-    <ion-item slot="header" color="light">
-      <div class="flex items-center gap-4">
-        <ion-icon name="alarm-outline"></ion-icon>
-        <ion-label>{{ formattedTime }}</ion-label>
-      </div>
-    </ion-item>
-    <ion-toggle slot="content" class="w-full" [checked]="true">Enabled</ion-toggle>
-  </ion-accordion> -->
-  <!-- Description -->
+
   <ion-list-header>Description</ion-list-header>
   <ion-card class="m-4 shadow-none" color="light">
     <ion-card-content class="pt-2">

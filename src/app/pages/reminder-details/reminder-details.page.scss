@@ -5,3 +5,7 @@ ion-icon {
 ion-datetime {
     max-width: 100%;
 }
+
+ion-item[slot=header] {
+    --border-width: 0px 0px 0.55px 0px !important;
+}

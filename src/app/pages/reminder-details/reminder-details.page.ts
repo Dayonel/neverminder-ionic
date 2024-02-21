@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonAccordion, IonAccordionGroup, IonActionSheet, IonBackButton, IonBreadcrumb, IonBreadcrumbs, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonDatetime, IonDatetimeButton, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonListHeader, IonModal, IonNote, IonPopover, IonRange, IonText, IonTextarea, IonTitle, IonToggle, IonToolbar } from '@ionic/angular/standalone';
+import { IonAccordion, IonAccordionGroup, IonActionSheet, IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonContent, IonDatetime, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonModal, IonNote, IonPopover, IonRange, IonText, IonTextarea, IonTitle, IonToggle, IonToolbar } from '@ionic/angular/standalone';
 import { format } from 'date-fns';
 import { addIcons } from 'ionicons';
 import { alarmOutline, calendarOutline } from 'ionicons/icons';
@@ -11,7 +11,7 @@ import { alarmOutline, calendarOutline } from 'ionicons/icons';
   templateUrl: './reminder-details.page.html',
   styleUrls: ['./reminder-details.page.scss'],
   standalone: true,
-  imports: [IonNote, IonAccordionGroup, IonAccordion, IonActionSheet, IonToggle, IonIcon, IonRange, IonBreadcrumb, IonBreadcrumbs, IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonModal, IonDatetimeButton, IonLabel, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonBackButton, IonButtons, IonButton, IonText, IonInput, IonTextarea, IonFooter, IonListHeader, IonDatetime]
+  imports: [IonNote, IonAccordionGroup, IonAccordion, IonActionSheet, IonToggle, IonIcon, IonCard, IonCardContent, IonLabel, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonBackButton, IonButtons, IonButton, IonText, IonInput, IonTextarea, IonFooter, IonListHeader, IonDatetime]
 })
 export class ReminderDetailsPage {
   date: Date;

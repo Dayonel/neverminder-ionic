@@ -36,8 +36,8 @@
               </div>
             </ion-item>
 
-            <ion-datetime slot="content" #date id="date" (ionChange)="dateChanged(date.value)"
-              presentation="date"></ion-datetime>
+            <ion-datetime slot="content" #date id="date" (ionChange)="dateChanged(date.value)" presentation="date"
+              [firstDayOfWeek]="1"></ion-datetime>
           </ion-accordion>
 
           <!-- Accordion 2 -->

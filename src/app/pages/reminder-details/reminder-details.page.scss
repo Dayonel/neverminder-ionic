@@ -9,3 +9,13 @@ ion-datetime {
 ion-item[slot=header] {
     --border-width: 0px 0px 0.55px 0px !important;
 }
+
+ion-card {
+    --background: var(--ion-color-dark-contrast);
+    --color: var(--ion-color-dark);
+}
+
+ion-datetime {
+    --background: var(--ion-color-dark-contrast);
+    --background-rgb: var(--ion-color-dark-contrast-rgb);
+}

@@ -25,3 +25,7 @@
 ion-refresher.refresher-active {
     z-index: 1;
 }
+
+::ng-deep reminder-item:not(:last-child) ion-item {
+    --border-width: 0px 0px 0.55px 0px !important;
+}

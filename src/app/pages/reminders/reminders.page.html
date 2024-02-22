@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [translucent]="true">
   <div class="header">
     <ion-icon size="large" src="/assets/logo.svg"></ion-icon>
   </div>
@@ -14,7 +14,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" color="light">
   <swiper-container class="swiper" #swiper (swiperslidechange)="slideChange()">
     <swiper-slide>
       <upcoming-reminders></upcoming-reminders>

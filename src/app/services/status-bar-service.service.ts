@@ -22,11 +22,11 @@ export class StatusBarServiceService {
   async statusBarColor() {
     if (this.isDarkMode()) {
       await StatusBar.setStyle({ style: Style.Dark });
-      await StatusBar.setBackgroundColor({ color: '#000000' });
+      await StatusBar.setBackgroundColor({ color: '#222428' });
     }
     else {
       await StatusBar.setStyle({ style: Style.Light });
-      await StatusBar.setBackgroundColor({ color: '#FFFFFF' });
+      await StatusBar.setBackgroundColor({ color: '#F4F5F8' });
     }
   }
 }

@@ -1,3 +1,12 @@
 ion-list {
     margin-top: 0 !important;
 }
+
+::ng-deep ion-searchbar input {
+    font-size: 14px !important;
+}
+
+::ng-deep ion-searchbar ion-icon {
+    width: 1.2rem !important;
+    inset-inline-start: 7px !important;
+}

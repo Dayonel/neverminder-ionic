@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="light">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button color="primary"></ion-back-button>
+      <ion-back-button color="primary" text="Reminders"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button>
@@ -12,14 +12,14 @@
 </ion-header>
 
 <ion-header class="ion-no-border">
-  <ion-toolbar color="light">
+  <ion-toolbar>
     <ion-title size="large">
       <ion-input placeholder="Title..." aria-label="Title" value="Details page"></ion-input>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="light">
+<ion-content>
 
   <div class="flex flex-col h-full">
     <div>
@@ -29,10 +29,10 @@
 
           <!-- Accordion 1 -->
           <ion-accordion value="first">
-            <ion-item slot="header">
+            <ion-item slot="header" lines="none">
               <div class="flex items-center gap-4 text-ellipsis">
                 <ion-icon name="calendar-outline"></ion-icon>
-                <ion-label>{{ formattedDate }}</ion-label>
+                <ion-note color="medium">{{ formattedDate }}</ion-note>
               </div>
             </ion-item>
 
@@ -42,10 +42,10 @@
 
           <!-- Accordion 2 -->
           <ion-accordion value="second">
-            <ion-item slot="header">
+            <ion-item slot="header" lines="none">
               <div class="flex items-center gap-4">
                 <ion-icon name="alarm-outline"></ion-icon>
-                <ion-label>{{ formattedTime }}</ion-label>
+                <ion-note color="medium">{{ formattedTime }}</ion-note>
               </div>
             </ion-item>
             <ion-datetime slot="content" #time id="time" (ionChange)="timeChanged(time.value)" presentation="time"
@@ -65,16 +65,14 @@
     </div>
 
     <div>
-      <ion-card class="m-4 shadow-none">
-        <ion-card-content class="pt-2">
-          <ion-textarea aria-label="Description" maxlength="1024" auto-grow="true" placeholder="Description..." value=""
-            rows="5"></ion-textarea>
-        </ion-card-content>
-      </ion-card>
+      <ion-card-content class="py-2">
+        <ion-textarea aria-label="Description" maxlength="1024" auto-grow="true" placeholder="Description..."
+          value=""></ion-textarea>
+      </ion-card-content>
     </div>
 
     <div class="p-4 mt-auto">
-      <ion-button color="light" expand="block" (click)="actionSheetOpen = true">
+      <ion-button fill="clear" expand="block" (click)="actionSheetOpen = true">
         <ion-text color="danger">Delete reminder</ion-text>
       </ion-button>
     </div>

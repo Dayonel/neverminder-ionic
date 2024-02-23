@@ -6,10 +6,6 @@ ion-datetime {
     max-width: 100%;
 }
 
-ion-item[slot=header] {
-    --border-width: 0px 0px 0.55px 0px !important;
-}
-
 ion-card {
     --background: var(--ion-color-dark-contrast);
     --color: var(--ion-color-dark);
@@ -18,4 +14,9 @@ ion-card {
 ion-datetime {
     --background: var(--ion-color-dark-contrast);
     --background-rgb: var(--ion-color-dark-contrast-rgb);
+}
+
+ion-list.list-inset {
+    margin-left: 0;
+    margin-right: 0;
 }

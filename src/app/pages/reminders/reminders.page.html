@@ -1,26 +1,9 @@
 <ion-header [translucent]="true">
-  <div class="header">
+  <div class="flex justify-center items-center p-4">
     <ion-icon size="large" src="/assets/logo.svg"></ion-icon>
   </div>
-  <ion-toolbar>
-    <ion-segment class="segment" mode="md" value="upcoming" [(ngModel)]="selectedSegment">
-      <ion-segment-button class="segment-button" value="upcoming" (click)="slideTo(0)">
-        <ion-label>Upcoming</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="segment-button" value="past" (click)="slideTo(1)">
-        <ion-label>History</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" color="light">
-  <swiper-container class="swiper" #swiper (swiperslidechange)="slideChange()">
-    <swiper-slide>
-      <upcoming-reminders></upcoming-reminders>
-    </swiper-slide>
-    <swiper-slide>
-      <past-reminders></past-reminders>
-    </swiper-slide>
-  </swiper-container>
+<ion-content [fullscreen]="true">
+  <reminder-list></reminder-list>
 </ion-content>

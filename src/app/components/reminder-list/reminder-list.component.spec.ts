@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PastRemindersComponent } from './past-reminders.component';
+import { ReminderListComponent } from './reminder-list.component';
 
-describe('PastRemindersComponent', () => {
-  let component: PastRemindersComponent;
-  let fixture: ComponentFixture<PastRemindersComponent>;
+describe('ReminderListComponent', () => {
+  let component: ReminderListComponent;
+  let fixture: ComponentFixture<ReminderListComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PastRemindersComponent ],
+      declarations: [ ReminderListComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PastRemindersComponent);
+    fixture = TestBed.createComponent(ReminderListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

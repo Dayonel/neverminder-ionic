@@ -1,4 +1,5 @@
 <ion-content>
+
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
@@ -9,35 +10,15 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+
   <ion-item lines="none">
     <ion-label>
       <strong>Today</strong>
     </ion-label>
   </ion-item>
-  <ion-list [inset]="true">
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
-    <reminder-item></reminder-item>
+  <ion-list>
+    <reminder-item [title]="result.title" [description]="result.description" [hour]="result.hour" *ngFor="let result of results"></reminder-item>
   </ion-list>
 
 </ion-content>

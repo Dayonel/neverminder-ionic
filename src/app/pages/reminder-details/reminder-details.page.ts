@@ -1,46 +1,16 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonAccordion, IonAccordionGroup, IonActionSheet, IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonContent, IonDatetime, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonModal, IonNote, IonPopover, IonRange, IonText, IonTextarea, IonTitle, IonToggle, IonToolbar } from '@ionic/angular/standalone';
-import { format } from 'date-fns';
-import { addIcons } from 'ionicons';
-import { alarmOutline, calendarOutline } from 'ionicons/icons';
+import { IonActionSheet, IonBackButton, IonButton, IonButtons, IonContent, IonFooter, IonHeader, IonText, IonToolbar } from '@ionic/angular/standalone';
+import { ReminderEditComponent } from 'src/app/components/reminder-edit/reminder-edit.component';
 
 @Component({
   selector: 'app-reminder-details',
   templateUrl: './reminder-details.page.html',
   styleUrls: ['./reminder-details.page.scss'],
   standalone: true,
-  imports: [IonNote, IonAccordionGroup, IonAccordion, IonActionSheet, IonToggle, IonIcon, IonCard, IonCardContent, IonLabel, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonBackButton, IonButtons, IonButton, IonText, IonInput, IonTextarea, IonFooter, IonListHeader, IonDatetime]
+  imports: [ReminderEditComponent, IonContent, IonHeader, IonText, IonButton, IonButtons, IonBackButton, IonToolbar, IonActionSheet, IonFooter]
 })
 export class ReminderDetailsPage {
-  date: Date;
-  time: Date;
-  formattedDate: string;
-  formattedTime: string
   actionSheetOpen = false;
-  enabled = true;
-
-  constructor() {
-    addIcons({ alarmOutline, calendarOutline });
-    this.date = new Date();
-    this.time = new Date();
-    this.formattedDate = this.formatDate(this.date);
-    this.formattedTime = this.formatTime(this.time);
-  }
-
-  dateChanged(value: any) {
-    console.log(value);
-    this.formattedDate = this.formatDate(value);
-  }
-
-  timeChanged(value: any) {
-    console.log(value);
-    this.formattedTime = this.formatTime(value);
-  }
-
-  formatDate = (date: Date) => format(date, 'EEEE, dd MMM yyyy');
-  formatTime = (time: Date) => format(time, 'HH:mm');
 
   public actionSheetButtons = [
     {

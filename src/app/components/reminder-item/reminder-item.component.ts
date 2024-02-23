@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonIcon, IonItem, IonLabel, IonList, IonNote, IonRouterLink, IonRouterLinkWithHref, IonText } from '@ionic/angular/standalone';
+import { IonIcon, IonItem, IonLabel, IonList, IonNote, IonRouterLink, IonText } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronForward } from 'ionicons/icons';
 
@@ -11,7 +11,7 @@ import { chevronForward } from 'ionicons/icons';
   standalone: true,
   imports: [IonList, IonIcon, IonNote, IonText, IonLabel, IonItem, IonRouterLink, RouterModule]
 })
-export class ReminderItemComponent implements OnInit {
+export class ReminderItemComponent {
   @Input() title = '';
   @Input() description = '';
   @Input() hour = '';
@@ -19,7 +19,4 @@ export class ReminderItemComponent implements OnInit {
   constructor() {
     addIcons({ chevronForward });
   }
-
-  ngOnInit() { }
-
 }

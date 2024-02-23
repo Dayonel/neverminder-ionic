@@ -8,5 +8,5 @@ export const routes: Routes = [
   {
     path: 'reminders/:id',
     loadComponent: () => import('./pages/reminder-details/reminder-details.page').then(m => m.ReminderDetailsPage)
-},
+  }
 ];

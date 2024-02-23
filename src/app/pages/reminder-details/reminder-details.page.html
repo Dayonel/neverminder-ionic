@@ -12,82 +12,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header class="ion-no-border" collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">
-        <ion-input
-          placeholder="Title..."
-          aria-label="Title"
-          value="Details page"
-        ></ion-input>
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <!-- Date & Time -->
-  <ion-list [inset]="true">
-    <ion-accordion-group>
-      <!-- Accordion 1 -->
-      <ion-accordion value="first">
-        <ion-item slot="header" lines="none">
-          <div class="flex items-center gap-4 text-ellipsis">
-            <ion-icon name="calendar-outline"></ion-icon>
-            <ion-note color="medium">{{ formattedDate }}</ion-note>
-          </div>
-        </ion-item>
-
-        <ion-datetime
-          slot="content"
-          #date
-          id="date"
-          (ionChange)="dateChanged(date.value)"
-          presentation="date"
-          [firstDayOfWeek]="1"
-        ></ion-datetime>
-      </ion-accordion>
-
-      <!-- Accordion 2 -->
-      <ion-accordion value="second">
-        <ion-item slot="header" lines="none">
-          <div class="flex items-center gap-4">
-            <ion-icon name="alarm-outline"></ion-icon>
-            <ion-note color="medium">{{ formattedTime }}</ion-note>
-          </div>
-        </ion-item>
-        <ion-datetime
-          slot="content"
-          #time
-          id="time"
-          (ionChange)="timeChanged(time.value)"
-          presentation="time"
-          hourCycle="h23"
-        ></ion-datetime>
-      </ion-accordion>
-    </ion-accordion-group>
-
-    <!-- Enabled -->
-    <ion-item lines="none">
-      <ion-toggle [(ngModel)]="enabled">
-        <ion-label>Enabled</ion-label>
-        <ion-note color="medium"
-          >{{ enabled ? 'Notification will be sent' : 'No notification will be
-          sent' }}</ion-note
-        >
-      </ion-toggle>
-    </ion-item>
-  </ion-list>
-
-  <div class="description">
-    <ion-card-content class="py-2">
-      <ion-textarea
-        aria-label="Description"
-        maxlength="1024"
-        rows="8"
-        placeholder="Description..."
-        value=""
-      ></ion-textarea>
-    </ion-card-content>
-  </div>
+  <reminder-edit></reminder-edit>
 </ion-content>
 
 <ion-footer>
@@ -98,8 +23,5 @@
   </div>
 </ion-footer>
 
-<ion-action-sheet
-  [isOpen]="actionSheetOpen"
-  header="Are you sure you want to delete this reminder?"
-  [buttons]="actionSheetButtons"
-></ion-action-sheet>
+<ion-action-sheet [isOpen]="actionSheetOpen" header="Are you sure you want to delete this reminder?"
+  [buttons]="actionSheetButtons"></ion-action-sheet>
